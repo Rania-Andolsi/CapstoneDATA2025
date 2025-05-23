@@ -29,7 +29,7 @@ Documentation & Architecture: Design a modular, scalable architecture with compl
 
 Mohamed Seddik Kamoun – Project Lead 
 
-Rania Andolsi – Project Lead, Model Optimization & Data Engineerin, Architecture & Research
+Rania Andolsi – Model Optimization & Data Engineerin, Architecture & Research
 
 Mootaz Bachtouli – Anomaly Detection & KPIs Analyst
 
