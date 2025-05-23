@@ -1,4 +1,4 @@
-# CapstoneDATA2025
+# Capstone_DATA_SCIENCE2025
 DATASCIENCE_Oct2025
 
 🧠 Project Title: SmartEnergyWatch – Anomaly Detection & Performance Impact Analysis in Energy Consumption
