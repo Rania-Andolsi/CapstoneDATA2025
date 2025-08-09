@@ -67,9 +67,13 @@ Week 6 – Final Report, Presentation, and Deployment
 
 
 Devolopment-Phase
+
 (venv) PS C:\Users\fedy\CapstoneDATA2025> pip list
+
 Package                   Version
+
 ------------------------- -----------
+
 altair                    5.5.0
 attrs                     25.3.0
 blinker                   1.9.0
@@ -122,17 +126,22 @@ tzdata                    2025.2
 urllib3                   2.5.0
 watchdog                  6.0.0
 wheel                     0.45.1
+
 (venv) PS C:\Users\fedy\CapstoneDATA2025> 
+
 ✅ Step 3: Anomaly Detection Module
+
 MVP: Isolation Forest
+
 Later: Upgrade to LSTM or Prophet for temporal anomalies.
 
-python
-Copier le code
+
 from sklearn.ensemble import IsolationForest
 
 model = IsolationForest(contamination=0.05)
+
 data['anomaly'] = model.fit_predict(data[['energy_kwh']])
+
 We can also use:
 
 Prophet for seasonality & trend
@@ -184,3 +193,74 @@ st.line_chart(filtered.set_index('timestamp')['energy_kwh'])
 
 anomalies = filtered[filtered['anomaly'] == -1]
 st.write("Anomalies Detected:", anomalies.shape[0])
+
+
+
+TROUBLESHOOT 
+
+You can change the execution policy for the current PowerShell session to allow the script to run.
+
+Open PowerShell as Administrator (right-click and choose Run as Administrator).
+
+Run the following command to temporarily allow the execution of PowerShell scripts in the current session:
+
+add a forecasting feature using Prophet to your energy dashboard.
+
+🚀 Goal: Add Forecasting with Prophet
+
+You’ll get a new tab:
+
+📈 Forecast — where you can:
+
+Choose a machine
+
+View future energy usage prediction
+
+Toggle forecast length (e.g. 7, 14, 30 days)
+
+✅ Step-by-Step Instructions
+
+
+We’ll add:
+
+Forecast tab
+
+Prophet model setup
+
+User control for forecast horizon
+
+Forecast visualization
+
+🛠 1. Add prophet if not already installed
+If not done yet, install Prophet:
+
+bash
+Copier le code
+pip install prophet
+
+
+🧪 3. What This Adds
+A new Forecast tab
+
+Uses Prophet to predict future energy_kwh
+
+User selects how far into the future to forecast
+
+Includes interactive chart & data table
+
+🖼 Visual Example:
+
+Input	Output
+Select 14 days	Prophet plots next 14 days
+Machine A	Forecast specific to that machine
+Tabs: Raw/Anomaly/Forecast	Easy switch between views
+
+✅ What we Get Now
+
+✅ Multiple machines selectable in sidebar
+
+✅ Unique description per machine
+
+✅ Slight variation in energy values across machines
+
+✅ All other KPIs, anomaly detection, and charts still work
